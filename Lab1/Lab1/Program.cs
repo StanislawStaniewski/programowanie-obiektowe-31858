@@ -133,7 +133,7 @@ Console.WriteLine("Dziękuję! Podałeś liczbę większą od zera.");
 ///////////////////////////////////////Zadanie 3/////////////////////////////////////
 
 
-string[] cities = { "Warszawa", "Kraków", "Gdańsk", "Poznań", "Wrocław" };
+string[] cities = { "Warszawa", "Kraków", "Gdańsk", "Poznań", "Wrocł`aw" };
 
 foreach (string city in cities)
 {
