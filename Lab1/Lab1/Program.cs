@@ -1,5 +1,7 @@
 ﻿// Example 1
 
+/*
+ 
 const int requiredAge = 18;
 const string accessDenied = "Musisz mieć 18 lat.";
 const string accessAllowed = "Witamy w naszym sklepie";
@@ -75,4 +77,65 @@ else if (wybor == "bron")
 else
 {
     Console.WriteLine("Niepoprawny wybór. Proszę wybrać 'alkohol' lub 'bron'.");
+}
+
+*/
+
+//////////////////////////////////////ZADANIE 1/////////////////////////////////////////////
+
+/*
+
+int count = 0;
+string password = "";
+
+while (password != "admin123")
+{
+    Console.WriteLine("Podaj hasło:");
+    password = Console.ReadLine();
+
+    if (password != "admin123")
+    {
+        Console.WriteLine("Błędne hasło, spróbuj ponownie.");
+    }
+}
+
+Console.WriteLine("Zalogowano pomyślnie!");
+
+string password;
+do
+{
+    Console.Write("Podaj hasło: ");
+    password = Console.ReadLine();
+}
+while (password != "admin123");
+Console.WriteLine("Zalogowano pomyślnie!");
+
+
+////////////////////////ZADANIE 2////////////////////////////
+
+int number;
+
+do
+{
+    Console.Write("Podaj liczbę większą od zera: ");
+    string input = Console.ReadLine();
+    int.TryParse(input, out number);
+
+    if (number <= 0)
+    {
+        Console.WriteLine("Liczba musi być większa od zera. Spróbuj ponownie.");
+    }
+
+} while (number <= 0);
+
+Console.WriteLine("Dziękuję! Podałeś liczbę większą od zera.");
+*/
+///////////////////////////////////////Zadanie 3/////////////////////////////////////
+
+
+string[] cities = { "Warszawa", "Kraków", "Gdańsk", "Poznań", "Wrocław" };
+
+foreach (string city in cities)
+{
+    Console.WriteLine($"Miasto: {city}");
 }
