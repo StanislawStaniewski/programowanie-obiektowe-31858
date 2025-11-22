@@ -1,82 +1,135 @@
 ﻿using System;
 
-//////////////////////////////Zadanie 5//////////////////////////////////////////////
-/*
-class KontoBankowe
+// class KontoBankowe
+// {
+//     private double saldo;
+//     public void Wplata(double k)
+//     {
+//         saldo += k;
+//         Console.WriteLine("wplata: " + k);
+//     }
+//     public void Wyplata(double k)
+//     {
+//         if (k <= saldo)
+//         {
+//             saldo -= k;
+//             Console.WriteLine("wyplata: " + k);
+//         }
+//         else
+//         {
+//             Console.WriteLine("za malo srodkow");
+//         }
+//     }
+//     public double PobierzSaldo()
+//     {
+//         return saldo;
+//     }
+// }
+// var konto = new KontoBankowe();
+// konto.Wplata(100);
+// konto.Wyplata(40);
+// Console.WriteLine(konto.PobierzSaldo());
+
+//6
+
+
+// class Zwierze
+// {
+//     public void Jedz()
+//     {
+//         Console.WriteLine("zwierze je");
+//     }
+// }
+// class Pies : Zwierze
+// {
+//     public void Szczekaj()
+//     {
+//         Console.WriteLine("hau hau");
+//     }
+// }
+// class Kot : Zwierze
+// {
+//     public void Miaucz()
+//     {
+//         Console.WriteLine("miau");
+//     }
+// }
+// Pies p = new Pies();
+// p.Jedz();
+// p.Szczekaj();
+// Kot k = new Kot();
+// k.Jedz();
+// k.Miaucz();
+
+
+//7
+
+
+// class ZwierzePoli
+// {
+//     public virtual void DajGlos()
+//     {
+//         Console.WriteLine("jakis dzwiek");
+//     }
+// }
+// class PiesPoli : ZwierzePoli
+// {
+//     public override void DajGlos()
+//     {
+//         Console.WriteLine("hau");
+//     }
+// }
+// class KotPoli : ZwierzePoli
+// {
+//     public override void DajGlos()
+//     {
+//         Console.WriteLine("miau");
+//     }
+// }
+// ZwierzePoli[] arr = {
+//     new PiesPoli(),
+//     new KotPoli(),
+//     new ZwierzePoli()
+// };
+// foreach (var z in arr)
+// {
+//     z.DajGlos();
+// }
+
+
+// 
+
+
+class Pojazd
 {
-    private double saldo;
-
-    public void Wplata(double kwota)
+    public virtual void Start()
     {
-        saldo += kwota;
-        Console.WriteLine("Wpłata: " + kwota);
-    }
-
-    public double PobierzSaldo()
-    {
-        return saldo;
-    }
-    public void Wyplata(double kwota)
-    {
-        if (kwota <= saldo)
-        {
-            saldo -= kwota;
-            Console.WriteLine("Wypłata udana: " + kwota);
-        }
-        else
-        {
-            Console.WriteLine("Za mało środków na koncie.");
-        }
+        Console.WriteLine("pojazd start");
     }
 }
-*/
-//////////////////////////////Zadanie 6//////////////////////////////////////////////
-class Zwierze
+class Samochod : Pojazd
 {
     public void Jedz()
     {
-        Console.WriteLine("Zwierzę je");
+        Console.WriteLine("samochod jedzie");
+    }
+}
+class ElektrycznySamochod : Samochod
+{
+    public void Laduj()
+    {
+        Console.WriteLine("ladowanie baterii...");
     }
 }
 
-class Pies : Zwierze
-{
-    public void Szczekaj()
-    {
-        Console.WriteLine("Hau hau!");
-    }
-}
 
-class Kot : Zwierze
-{
-    public void Miaucz()
-    {
-        Console.WriteLine("Miau!");
-    }
-}
 class Program
 {
     static void Main(string[] args)
     {
-        // Test Zadanie 5
-        var konto = new KontoBankowe();
-        konto.Wplata(100);
-        konto.Wyplata(50);   // OK
-        konto.Wyplata(100);  // Za mało środków
-        Console.WriteLine("Saldo: " + konto.PobierzSaldo());
-
-        Console.WriteLine();
-
-        // Test Zadanie 6
-        var pies = new Pies();
-        pies.Jedz();
-        pies.Szczekaj();
-
-        var kot = new Kot();
-        kot.Jedz();
-        kot.Miaucz();
-
-        Console.WriteLine("\nKoniec. Naciśnij Enter...");
-        Console.ReadLine();
+        ElektrycznySamochod e = new ElektrycznySamochod();
+        e.Start();
+        e.Jedz();
+        e.Laduj();
     }
 }
